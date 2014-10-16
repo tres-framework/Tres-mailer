@@ -1,4 +1,5 @@
-Tres-mailer
-===========
+Tres mailer
+=============
 
-Tres mailer package.
+This is the mail package used for the [Tres Framework](https://github.com/pedzed/Tres). 
+It can be used without the main framework.
