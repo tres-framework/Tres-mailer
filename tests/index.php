@@ -3,6 +3,7 @@
 use packages\Tres\mailer\Config as MailConfig;
 use packages\Tres\mailer\Connection as MailConnection;
 use packages\Tres\mailer\Mail;
+use packages\Tres\mailer\PackageInfo as MailerPackageInfo;
 
 error_reporting(-1);
 ini_set('display_errors', 1);
@@ -81,7 +82,7 @@ $mail->subject = 'Test email!';
 $mail->body = '<h1>Test email</h1><b>HTML</b> is supported.';
 
 $mail->addHeader('X-IP-Address', $_SERVER['REMOTE_ADDR']);
-$mail->addHeader('X-Mailer', 'Tres Mailer');
+$mail->addHeader('X-Mailer', 'Tres Mailer/'.MailerPackageInfo::get()['version']);
 
 if($mail->send()){
     echo 'Success!<br />';
@@ -90,3 +91,5 @@ if($mail->send()){
 }
 
 $mail->displayLog();
+
+echo '<pre>', print_r(MailerPackageInfo::get()), '</pre>';
