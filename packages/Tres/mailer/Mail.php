@@ -121,6 +121,10 @@ namespace packages\Tres\mailer {
                 throw new MailException('Mail configuration not set.');
             }
             
+            if(empty($conn)){
+                $conn = new Connection($this->_config['defaults']['connection']);
+            }
+            
             $this->_connection = $conn;
             $this->_conversationLog = $conn->getLog();
         }
