@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\Tres\mailer {
+namespace Tres\mailer {
     
     /**
      * Information about this package.
@@ -13,7 +13,7 @@ namespace packages\Tres\mailer {
          * @var array
          */
         protected static $_info = [
-            'version' => '0.1-dev',
+            'version' => '0.2-dev',
             'website' => 'http://tresframework.com/',
             
             'contributors' => [

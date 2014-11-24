@@ -1,6 +1,6 @@
 <?php
 
-namespace packages\Tres\mailer {
+namespace Tres\mailer {
     
     interface ExceptionInterface {}
     

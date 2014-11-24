@@ -1,9 +1,9 @@
 <?php
 
-use packages\Tres\mailer\Config as MailConfig;
-use packages\Tres\mailer\Connection as MailConnection;
-use packages\Tres\mailer\Mail;
-use packages\Tres\mailer\PackageInfo as MailerPackageInfo;
+use Tres\mailer\Config as MailConfig;
+use Tres\mailer\Connection as MailConnection;
+use Tres\mailer\Mail;
+use Tres\mailer\PackageInfo as MailerPackageInfo;
 
 error_reporting(-1);
 ini_set('display_errors', 1);
@@ -63,12 +63,12 @@ $mailerInfo = [
 MailConfig::set($mailerInfo);
 
 try {
-    $mainMailServer = new MailConnection('server 3');
+    $mainMailServer = new MailConnection('server 2');
 } catch(Exception $e){
     die($e->getMessage());
 }
 
-$mail = new Mail($mainMailServer);
+$mail = new Mail(/*$mainMailServer*/);
 $mail->isHTML();
 
 $mail->from = 'John Doe';
