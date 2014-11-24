@@ -133,7 +133,7 @@ namespace Tres\mailer {
                 break;
             }
             
-            if(!$this->_connection = fsockopen($host,
+            if(!$this->_connection = @fsockopen($host,
                                                $this->_config['port'],
                                                $errno,
                                                $errstr,
